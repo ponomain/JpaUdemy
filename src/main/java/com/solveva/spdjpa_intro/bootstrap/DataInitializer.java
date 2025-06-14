@@ -3,8 +3,10 @@ package com.solveva.spdjpa_intro.bootstrap;
 import com.solveva.spdjpa_intro.domain.Book;
 import com.solveva.spdjpa_intro.repositories.BookRepository;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
+@Profile({"local", "default"})
 @Component
 public class DataInitializer implements CommandLineRunner {
 
@@ -14,21 +16,14 @@ public class DataInitializer implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
+        bookRepository.deleteAll();
         Book book = new Book("DDD", "123", "John");
 
-        System.out.println("Id:" + book.getId());
-
-        Book savedBook = bookRepository.save(book);
-
-        System.out.println("Id:" + savedBook.getId());
+        bookRepository.save(book);
 
         Book bookSIA = new Book("SIA", "123", "Wick");
 
-        System.out.println("Id:" + bookSIA.getId());
-
-        Book savedBookSIA = bookRepository.save(bookSIA);
-
-        System.out.println("Id:" + savedBookSIA.getId());
+        bookRepository.save(bookSIA);
 
         bookRepository.findAll().forEach(existingBook ->
                 {
