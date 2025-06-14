@@ -6,7 +6,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
-@Profile({"local", "default"})
+@Profile({"local", "default", "test"})
 @Component
 public class DataInitializer implements CommandLineRunner {
 

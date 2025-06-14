@@ -10,7 +10,7 @@ import org.springframework.test.context.ActiveProfiles;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-@ActiveProfiles("local")
+@ActiveProfiles("test")
 @DataJpaTest
 @ComponentScan(basePackages = {"com.solveva.spdjpa_intro.bootstrap"})
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
