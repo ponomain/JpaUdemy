@@ -27,8 +27,8 @@ public class DataInitializer implements CommandLineRunner {
 
         bookRepository.findAll().forEach(existingBook ->
                 {
-                    System.out.println("Book Id" + existingBook.getId());
-                    System.out.println("Book title" + existingBook.getTitle());
+                    System.out.println("Book Id " + existingBook.getId());
+                    System.out.println("Book title " + existingBook.getTitle());
                 }
         );
     }
