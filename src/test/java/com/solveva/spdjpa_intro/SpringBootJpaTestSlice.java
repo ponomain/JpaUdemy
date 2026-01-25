@@ -19,7 +19,6 @@ import static org.assertj.core.api.Assertions.assertThat;
 @DataJpaTest
 @ComponentScan(basePackages = {"com.solveva.spdjpa_intro.bootstrap"})
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
-@ActiveProfiles("local")
 class SpringBootJpaTestSlice {
 
     @Autowired
